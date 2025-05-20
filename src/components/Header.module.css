@@ -1,0 +1,30 @@
+.headerWrap {
+  width: 100%;
+  height: 80px;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 160px;
+  top: 24px;
+}
+
+.menuWrap {
+  display: flex;
+  gap: 135px;
+  position: absolute;
+  left: 767px;
+  top: 27px;
+  height: 48px;
+}
+
+.menuItem {
+  text-decoration: none;
+  position: relative;
+}
+
+.active {
+  border-bottom: 1px solid #4880EE;
+  padding-bottom: 4px;
+} 
