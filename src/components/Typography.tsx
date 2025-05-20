@@ -7,6 +7,7 @@ interface BaseTypographyProps {
   children: ReactNode;
   className?: string;
   as?: ElementType;
+  style?: React.CSSProperties;
 }
 
 interface Body2Props extends BaseTypographyProps {
@@ -22,16 +23,18 @@ const createTypographyComponent = (
     children,
     className = '',
     as,
+    style,
   }: BaseTypographyProps) => {
     const Component = as || defaultElement;
-    const style = typography[variant];
+    const typographyStyle = typography[variant];
 
     return (
       <Component
         className={className}
         style={{
-          ...style,
           color: colors.text[color],
+          ...typographyStyle,
+          ...style,
         }}
       >
         {children}
