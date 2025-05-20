@@ -1,0 +1,10 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5 10px;
+  height: 32.27px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+

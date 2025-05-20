@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import styles from "./Header.module.css";
-import { Body1, Title1 } from "./Typography";
+import { Body1, Title1 } from "../Typography";
+import styles from "./index.module.css";
 
 const MENUS = [
   { label: "도서 검색", href: "/books" },
   { label: "내가 찜한 책", href: "/books/like" },
 ];
 
-export default function Header() {
+export function Header() {
   const pathname = usePathname();
 
   return (
