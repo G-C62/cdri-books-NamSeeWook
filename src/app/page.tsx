@@ -1,5 +1,6 @@
 import { LightGrayButton, PrimaryButton, TextButton } from "@/components/Button";
 import { LikeIcon } from "@/components/icons";
+import { EmptyBook } from "@/components/icons/EmptyBook";
 import { Title1 } from "@/components/Typography";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <PrimaryButton>구매하기</PrimaryButton>
       <LightGrayButton arrow="up">상세보기</LightGrayButton>
       <LightGrayButton arrow="down">상세보기</LightGrayButton>
+      <EmptyBook/>
     </div>
   );
 }
