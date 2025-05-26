@@ -6,6 +6,7 @@ import { Spacer } from "@/components/Spacer";
 import { Body2, Caption, Small, Title3 } from "@/components/Typography";
 import { VStack } from "@/components/VStack";
 import Image from "next/image";
+import styles from './index.module.css';
 
 interface BookSearchResultItemDetailProps {
   book: Book
@@ -18,7 +19,7 @@ export function BookSearchResultItemDetail({book, onToggle}: BookSearchResultIte
       <Image src={book.thumbnail} alt={book.title} width={210} height={280} />
       <Space width="32px" />
       <VStack>
-        <HStack >
+        <HStack style={{height: '68px'}}>
           <Title3>{book.title}</Title3>
           <Space width="16px" />
           <Caption color="subtitle">{book.authors.at(0)}</Caption>
@@ -27,25 +28,33 @@ export function BookSearchResultItemDetail({book, onToggle}: BookSearchResultIte
         <Space width="12px" />
         <small color="primary">{book.contents}</small>
       </VStack>
+      <Space width="48px" />
       <VStack>
-        <HStack>
+        <HStack style={{height: '68px'}}>
           <Spacer />
           <LightGrayButton arrow="up" onClick={onToggle}>상세보기</LightGrayButton>
         </HStack>
         <Spacer/>
         <HStack>
           <Spacer/>
-          <Small color="subtitle">원가</Small>
+          <Small color="subtitle" className={styles.priceLabel}>원가</Small>
           <Space width="8px" />
-          <Title3>{book.price.toLocaleString()}원</Title3>
+          <Title3 className={book.sale_price ? styles.hasDisCount : ''}>{book.price.toLocaleString()}원</Title3>
         </HStack>
+        {
+          book.sale_price && (
+            <HStack>
+              <Spacer/>
+              <Small color="subtitle" className={styles.priceLabel}>할인가</Small>
+              <Space width="8px" />
+              <Title3>{book.sale_price.toLocaleString()}원</Title3>
+            </HStack>
+          )
+        }
         <HStack>
           <Spacer/>
-          <Small color="subtitle">할인가</Small>
-          <Space width="8px" />
-          <Title3>{book.sale_price.toLocaleString()}원</Title3>
+          <PrimaryButton style={{width: '240px'}}>구매하기</PrimaryButton>
         </HStack>
-        <PrimaryButton>구매하기</PrimaryButton>
       </VStack>
     </HStack>
   )

@@ -7,7 +7,6 @@ export function HStack({ children, style,...rest }: DivProps) {
     display: 'flex',
     flexDirection: 'row',
     width: '100%',
-    height: '100%',
     ...style
   }}
   {...rest}

@@ -1,0 +1,13 @@
+.hasDisCount {
+  font-weight: 350;
+  size: 18px;
+  line-height: 26px;
+  text-decoration: line-through;
+}
+
+.priceLabel {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 22px;
+  align-content: center;
+}

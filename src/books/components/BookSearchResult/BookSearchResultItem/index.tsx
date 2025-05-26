@@ -22,25 +22,30 @@ export function BookSearchResultItem({item}: BookSearchResultItemProps) {
 
   if(isOpen){
     return (
-     <BookSearchResultItemDetail book={item} onToggle={handleToggle}/>
+      <div className={styles.itemContainer}>
+        <BookSearchResultItemDetail book={item} onToggle={handleToggle}/>
+      </div>
     )
   }  
   return (
-    <HStack className={styles.bookContainer} >
-      <Image src={item.thumbnail} alt={item.title} width={48} height={68} />
-      <Space width="48px" />
+    <div>
+      <HStack className={styles.itemContainer} >
+        <Image src={item.thumbnail} alt={item.title} width={48} height={68} />
+        <Space width="48px" />
 
-      <Title3>{item.title}</Title3>
-      <Space width="16px" />
+        <Title3>{item.title}</Title3>
+        <Space width="16px" />
 
-      <Body2 color="secondary">{item.authors.at(0)}</Body2>
-      <Spacer/>
-      <Title3>{item.price.toLocaleString()}원</Title3>
-      <Space width="56px" />
+        <Body2 color="secondary">{item.authors.at(0)}</Body2>
+        <Spacer/>
+        <Title3>{item.price.toLocaleString()}원</Title3>
+        <Space width="56px" />
 
-      <PrimaryButton>구매하기</PrimaryButton>
-      <Space width="8px" />
-      <LightGrayButton arrow={isOpen ? "up" : "down"} onClick={handleToggle}>상세보기</LightGrayButton>
-    </HStack>
+        <PrimaryButton>구매하기</PrimaryButton>
+        <Space width="8px" />
+        <LightGrayButton arrow={isOpen ? "up" : "down"} onClick={handleToggle}>상세보기</LightGrayButton>
+      </HStack>
+    </div>
+
   );
 }
