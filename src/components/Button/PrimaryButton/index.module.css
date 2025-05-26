@@ -8,5 +8,6 @@
   border: none;
   cursor: pointer;
   margin: auto 0;
+  min-width: 115px;
 }
 
