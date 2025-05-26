@@ -18,10 +18,13 @@ export default function Books() {
         <VStack>
           <Title2>도서 검색</Title2>
           <Space height="16px" />
+
           <BookSearchInput />
           <Space height="25px" />
-          <BookSearchSummary />
+
+          <BookSearchSummary totalCount={data?.meta.total_count} />
           <Space height="36px" />
+          
           <BookSearchResult books={data?.documents} />
         </VStack>
       </form>
