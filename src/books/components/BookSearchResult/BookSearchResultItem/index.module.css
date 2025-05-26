@@ -6,8 +6,13 @@
   border-bottom: 1px solid #D2D6DA;
 }
 
-
-
 .bookContainer > * {
   align-content: center;
+}
+
+.hasDisCount {
+  font-weight: 350;
+  size: 18px;
+  line-height: 26px;
+  text-decoration: line-through;
 }
