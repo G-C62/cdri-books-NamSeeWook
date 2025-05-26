@@ -1,11 +1,12 @@
 import { Header } from "@/components/Header";
+import { QueryProvider } from '@/lib/providers/QueryProvider';
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from 'next/font/google';
 import styles from './layout.module.css';
 
 const notoSansKr = Noto_Sans_KR({
   subsets: ['latin'],
-  weight: ['500', '700'],
+  weight: ['400', '500', '700'],
   display: 'swap',
 });
 
@@ -22,10 +23,12 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={notoSansKr.className}>
-        <Header />
-        <main className={styles.main}>
-          {children}
-        </main>
+        <QueryProvider>
+          <Header />
+          <main className={styles.main}>
+            {children}
+          </main>
+        </QueryProvider>
       </body>
     </html>
   );
