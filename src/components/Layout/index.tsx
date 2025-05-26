@@ -9,15 +9,12 @@ const notoSansKr = Noto_Sans_KR({
 });
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  
   return (
-    <html lang="ko">
-      <body className={notoSansKr.className}>
-        <Header />
-          <main className={styles.main}>
-            {children}
-          </main>
-      </body>
-    </html>
+    <div className={notoSansKr.className}>
+      <Header />
+      <main className={styles.main}>
+        {children}
+      </main>
+    </div>
   );
 }

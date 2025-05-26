@@ -13,7 +13,7 @@ interface Meta {
   is_end: boolean;
 }
 
-interface Book {
+export interface Book {
   title: string;
   contents: string[];
   url: string;
@@ -28,7 +28,7 @@ interface Book {
   status: string;
 }
 
-interface BookSearchResponse {
+export interface BookSearchResponse {
   documents: Book[];
   meta: Meta
 }
